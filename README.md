@@ -1,109 +1,78 @@
-# 📊 Dashboard Generator
+# 📊 Estadincho-Gen
 
-Convierte **cualquier Excel o CSV** en un dashboard visual profesional con un solo clic.  
-Sin conocimientos técnicos. Sin configuración. Solo arrastra el archivo.
+**Convierte cualquier archivo de datos en un dashboard visual interactivo con un solo clic.**
 
----
-
-## ✅ Requisitos
-
-- Windows 7 / 10 / 11
-- Python 3.8 o superior → [descargar aquí](https://www.python.org/downloads/)  
-  ⚠️ Durante la instalación de Python marca **"Add Python to PATH"**
+Desarrollado para el sistema de bibliotecas de la Fundación Universitaria del Área Andina — pero funciona con cualquier dataset.
 
 ---
 
-## 🚀 Instalación (una sola vez por PC)
+## ¿Qué hace?
 
-### Opción A — GitHub (recomendada para distribuir)
+Arrastra un archivo de datos sobre el ejecutable y genera automáticamente un dashboard HTML completo con:
 
-```cmd
-git clone https://github.com/TU_USUARIO/dashboard-gen.git
-cd dashboard-gen
-pip install pandas openpyxl
-```
+- **KPIs** — total de registros, sumas y promedios de variables numéricas, score de calidad
+- **Gráficas** — línea de tiempo, distribuciones por categoría, top 10, dona
+- **Tabla de resumen** — distribución por la variable categórica principal
+- **Calidad de datos** — nulos, outliers por IQR y Z-score, score 0–100 por variable
+- **Matriz de correlación** — heatmap en Canvas puro, sin librerías externas
 
-### Opción B — Descarga ZIP
-
-1. Descarga el ZIP del repositorio
-2. Extrae en cualquier carpeta
-3. Abre CMD en esa carpeta y ejecuta:
-
-```cmd
-pip install pandas openpyxl
-```
+Todo en un solo archivo `.html` que se abre directamente en el navegador. **Sin instalaciones, sin configuración.**
 
 ---
 
-## 🖱️ Uso diario (sin CMD)
+## Uso
 
-1. **Arrastra** tu archivo `.xlsx` o `.csv` encima del ícono `generar_dashboard.bat`
-2. Espera unos segundos
-3. El dashboard se abre **automáticamente** en tu navegador
+### Para el usuario final — solo dos archivos necesarios
 
-**Así de simple.** El archivo HTML generado queda en la misma carpeta que tu Excel/CSV.
+generar_dashboard.exe
+generar_dashboard.bat
 
----
+**Opción 1 — Arrastrar y soltar**
+Arrastra tu archivo de datos directamente sobre `generar_dashboard.bat` en el Explorador de Windows.
 
-## 💻 Uso desde CMD
+**Opción 2 — Doble clic**
+Ejecuta `generar_dashboard.bat`, escribe la ruta del archivo cuando se solicite.
 
-```cmd
-python generar_dashboard.py ventas_2024.xlsx
-python generar_dashboard.py clientes.csv
-python generar_dashboard.py C:\Documentos\reporte.xlsx
-```
+El dashboard se guarda en la misma carpeta del archivo original como `dashboard_<nombre>.html` y se abre automáticamente en el navegador.
 
 ---
 
-## 📁 Formatos soportados
+## Formatos soportados
 
 | Formato | Extensión |
-|---------|-----------|
-| Excel   | `.xlsx` `.xls` `.xlsm` |
-| CSV     | `.csv` (comas, punto y coma, tabulaciones) |
+|---|---|
+| Excel | `.xlsx` `.xls` `.xlsm` |
+| CSV | `.csv` |
+| TSV | `.tsv` |
+| OpenDocument | `.ods` |
+| SPSS | `.sav` |
+| Stata | `.dta` |
+| R | `.rds` `.RData` |
 
 ---
 
-## 🎨 ¿Qué genera el dashboard?
+## Estructura del proyecto
 
-El script detecta **automáticamente** el tipo de cada columna:
-
-| Tipo de columna | Qué genera |
-|----------------|------------|
-| Fechas | Gráfica de línea por período |
-| Texto / Categorías | Gráfica de dona o barras horizontales |
-| Números | KPIs con suma y promedio |
-| Combinación | Top 10, comparativas, tabla resumen |
-
-**Estilo:** fondo oscuro, colores neón, Chart.js — idéntico al dashboard de referencia.
+estadincho-gen/
+├── generar_dashboard.exe  # Ejecutable — distribuir al usuario final
+├── generar_dashboard.bat  # Lanzador por arrastre
+├── generar_dashboard.py   # Código fuente
+└── README.md
 
 ---
 
-## ❓ Preguntas frecuentes
+## Fases de desarrollo
 
-**¿El archivo se sube a internet?**  
-No. Todo se procesa localmente en tu PC. El dashboard es un HTML que vive en tu carpeta.
-
-**¿Funciona con archivos con varias hojas?**  
-Sí, toma automáticamente la hoja con más datos.
-
-**¿El CSV tiene punto y coma como separador?**  
-Sí, detecta automáticamente: comas, punto y coma, tabulaciones y pipes (`|`).
-
-**Primera vez tarda mucho.**  
-Solo la primera vez instala `pandas` y `openpyxl`. Las siguientes veces es instantáneo.
+| Fase | Descripción | Estado |
+|---|---|---|
+| Base | Excel y CSV, gráficas automáticas, KPIs | ✅ |
+| Fase 1 | Soporte TSV y ODS, encoding/delimitador automático, tabla de estadísticas | ✅ |
+| Fase 2 | Soporte SPSS, Stata y R con etiquetas de variables | ✅ |
+| Fase 3 | Calidad de datos por variable + matriz de correlación | ✅ |
 
 ---
 
-## 🗂️ Archivos del proyecto
+## Desarrollado por
 
-```
-dashboard-gen/
-├── generar_dashboard.py   ← Script principal (cerebro)
-├── generar_dashboard.bat  ← Lanzador Windows (drag & drop)
-└── README.md              ← Este archivo
-```
-
----
-
-*Dashboard Generator — uso libre interno*
+**REKOL08** — Biblioteca Fundación Universitaria del Área Andina  
+Sedes: Bogotá · Pereira · Valledupar
