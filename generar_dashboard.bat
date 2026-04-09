@@ -1,15 +1,17 @@
 @echo off
-chcp 65001 >nul
-title Dashboard Generator
+set "EXE=%~dp0generar_dashboard.exe"
+
+if not exist "%EXE%" (
+    echo ERROR: No se encontro generar_dashboard.exe en esta carpeta.
+    pause
+    exit /b 1
+)
 
 if "%~1"=="" (
-    echo.
-    echo  Arrastra tu archivo Excel o CSV encima de este icono.
-    echo  Formatos soportados: .xlsx .xls .csv
-    echo.
+    echo Arrastra tu archivo sobre este .bat o ejecutalo desde CMD:
+    echo generar_dashboard.bat mi_archivo.xlsx
     pause
     exit /b 0
 )
 
-"%~dp0generar_dashboard.exe" "%~1"
-pause
+"%EXE%" "%~1"
