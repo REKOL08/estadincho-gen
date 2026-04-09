@@ -82,5 +82,4 @@ estadincho-gen/
 
 ## Desarrollado por
 
-**REKOL08** — Biblioteca Fundación Universitaria del Área Andina  
-Sedes: Bogotá · Pereira · Valledupar
+**REKOL08** 
