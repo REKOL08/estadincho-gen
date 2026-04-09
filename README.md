@@ -20,20 +20,28 @@ Todo en un solo archivo `.html` que se abre directamente en el navegador. **Sin 
 
 ---
 
-## Uso
+## Primeros pasos
 
-### Para el usuario final — solo dos archivos necesarios
+### 1. Descarga los archivos
+Ve a la sección [Releases](https://github.com/REKOL08/estadincho-gen/releases) y descarga:
+- `generar_dashboard.exe`
+- `generar_dashboard.bat`
 
-generar_dashboard.exe
-generar_dashboard.bat
+Coloca ambos archivos en la misma carpeta.
 
-**Opción 1 — Arrastrar y soltar**
-Arrastra tu archivo de datos directamente sobre `generar_dashboard.bat` en el Explorador de Windows.
+### 2. Prepara tu archivo de datos
+Ten a la mano tu archivo Excel, CSV u otro formato soportado.
 
-**Opción 2 — Doble clic**
-Ejecuta `generar_dashboard.bat`, escribe la ruta del archivo cuando se solicite.
+### 3. Genera el dashboard
 
-El dashboard se guarda en la misma carpeta del archivo original como `dashboard_<nombre>.html` y se abre automáticamente en el navegador.
+**Opción A — Arrastrar y soltar**
+Arrastra tu archivo de datos directamente sobre `generar_dashboard.bat`. El dashboard se genera y se abre automáticamente en el navegador.
+
+**Opción B — Doble clic**
+Haz doble clic sobre `generar_dashboard.bat`, escribe o pega la ruta de tu archivo cuando se solicite y presiona Enter.
+
+### 4. Resultado
+El dashboard se guarda como `dashboard_<nombre_archivo>.html` en la misma carpeta donde está tu archivo de datos y se abre automáticamente en el navegador.
 
 ---
 
