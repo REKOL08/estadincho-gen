@@ -2,7 +2,6 @@
 
 **Convierte cualquier archivo de datos en un dashboard visual interactivo con un solo clic.**
 
-Desarrollado para el sistema de bibliotecas de la Fundación Universitaria del Área Andina — pero funciona con cualquier dataset.
 
 ---
 
